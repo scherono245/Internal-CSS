@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration | Portal</title>
+    <style>
+       
+        body {
+            background-color: #FDFCF0; 
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-top: 5px solid #F06292; 
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2C3E50;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 24px;
+        }
+
+        
+        label {
+            display: block;
+            font-style: italic;
+            font-weight: 600;
+            color: #F06292; 
+            margin-top: 15px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #D1D1D1;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+            background-color: #FAFAFA;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2C3E50; 
+            background-color: #fff;
+        }
+
+       
+        button {
+            margin-top: 30px;
+            background-color: #2C3E50;
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #F06292; 
+            letter-spacing: 2px;
+        }
+
+        
+        #success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #E8F5E9;
+            color: #2E7D32;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Student Registration</h2>
+        
+        <form id="regForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required placeholder="John Doe">
+
+            <label for="student_num">Student Number</label>
+            <input type="text" id="student_num" required placeholder="SN-88291">
+
+            <label for="tel">Telephone Number</label>
+            <input type="tel" id="tel" required placeholder="+254 700 000 000">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required placeholder="student@university.com">
+
+            <button type="submit" id="submitBtn">Submit Registration</button>
+        </form>
+
+        <div id="success-message">
+            ✓ Registration successfully submitted!
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+           
+            this.style.display = 'none';
+            
+           
+            const msg = document.getElementById('success-message');
+            msg.style.display = 'block';
+            
+            
+            console.log("Data captured successfully.");
+        });
+    </script>
+
+</body>
+</html>
